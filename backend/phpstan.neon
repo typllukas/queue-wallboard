@@ -1,0 +1,7 @@
+parameters:
+    level: max
+    checkMissingOverrideMethodAttribute: true
+    paths:
+        - src
+        - tests
+        - tools
