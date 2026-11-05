@@ -1,0 +1,136 @@
+{
+    "snapshot": {
+        "action": "snapshot",
+        "agents": [
+            {
+                "id_agent": "201",
+                "title": "Jana Nováková",
+                "exten": "201",
+                "state": "Idle",
+                "exten_status": "Idle",
+                "id_pause": null,
+                "onpause": null,
+                "statetime": "2026-11-03T09:30:00+01:00",
+                "logintime": "2026-11-03T08:00:00+01:00",
+                "lastcalltime": "2026-11-03T09:30:00+01:00",
+                "queues": [
+                    "sales"
+                ]
+            },
+            {
+                "id_agent": "203",
+                "title": "Petr Svoboda",
+                "exten": "203",
+                "state": "Paused",
+                "exten_status": "Idle",
+                "id_pause": "lunch",
+                "onpause": "2026-11-03T09:50:00+01:00",
+                "statetime": "2026-11-03T09:50:00+01:00",
+                "logintime": "2026-11-03T08:00:00+01:00",
+                "lastcalltime": "2026-11-03T09:45:00+01:00",
+                "queues": [
+                    "sales",
+                    "support"
+                ]
+            },
+            {
+                "id_agent": "205",
+                "title": "Marie Dvořáková",
+                "exten": "205",
+                "state": "Session",
+                "exten_status": "Busy",
+                "id_pause": null,
+                "onpause": null,
+                "statetime": "2026-11-03T09:58:00+01:00",
+                "logintime": "2026-11-03T08:15:00+01:00",
+                "lastcalltime": null,
+                "queues": [
+                    "support"
+                ]
+            }
+        ],
+        "queues": [
+            {
+                "name": "sales",
+                "title": "Sales",
+                "threshold_calls": 5,
+                "threshold_users": 1,
+                "threshold_time": 60,
+                "ongoing": 0,
+                "available": 1,
+                "users_on_pause": {
+                    "lunch": 1,
+                    "training": 0,
+                    "inactive": 0,
+                    "other": 0
+                },
+                "answered": 0,
+                "unanswered": 0,
+                "total": 0,
+                "counted_since": "2026-11-03T10:00:00+01:00",
+                "abandon_rate": null,
+                "sla": null,
+                "svl": null,
+                "waiting_calls": []
+            },
+            {
+                "name": "support",
+                "title": "Support",
+                "threshold_calls": 4,
+                "threshold_users": 1,
+                "threshold_time": 90,
+                "ongoing": 1,
+                "available": 0,
+                "users_on_pause": {
+                    "lunch": 1,
+                    "training": 0,
+                    "inactive": 0,
+                    "other": 0
+                },
+                "answered": 1,
+                "unanswered": 1,
+                "total": 2,
+                "counted_since": "2026-11-03T10:00:00+01:00",
+                "abandon_rate": 0.5,
+                "sla": 1.0,
+                "svl": 0.5,
+                "waiting_calls": [
+                    {
+                        "id": "call-older",
+                        "waiting_since": "2026-11-03T09:58:50+01:00"
+                    },
+                    {
+                        "id": "call-newer",
+                        "waiting_since": "2026-11-03T09:59:30+01:00"
+                    }
+                ]
+            }
+        ],
+        "exchange_connected": true,
+        "sla_threshold_seconds": 20
+    },
+    "pull": {
+        "hash": "5f0c2a9e-7",
+        "full": false,
+        "agents": [
+            {
+                "id_agent": "203",
+                "title": "Petr Svoboda",
+                "exten": "203",
+                "state": "Paused",
+                "exten_status": "Idle",
+                "id_pause": "lunch",
+                "onpause": "2026-11-03T09:50:00+01:00",
+                "statetime": "2026-11-03T09:50:00+01:00",
+                "logintime": "2026-11-03T08:00:00+01:00",
+                "lastcalltime": "2026-11-03T09:45:00+01:00",
+                "queues": [
+                    "sales",
+                    "support"
+                ]
+            }
+        ],
+        "queues": [],
+        "exchange_connected": true
+    }
+}
