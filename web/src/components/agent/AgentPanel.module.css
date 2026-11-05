@@ -1,0 +1,146 @@
+.panel {
+  --background: #ffffff;
+  --panel: #f6f8fa;
+  --text: #1f2328;
+  --text-muted: #57606a;
+  --border: #d0d7de;
+  --row-border: #eaeef2;
+  --green: #1a7f37;
+  --orange: #9a6700;
+  --red: #cf222e;
+
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 14px;
+  background: var(--background);
+  color: var(--text);
+  font-size: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+.title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.banner {
+  margin: 0 0 12px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #fff8c5;
+  color: #4d2d00;
+}
+
+.error {
+  margin: 0 0 12px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #ffebe9;
+  color: #82071e;
+}
+
+.content {
+  transition: opacity 0.3s;
+}
+
+.content[data-dimmed='true'] {
+  opacity: 0.4;
+}
+
+.state {
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.state[data-tone='available'] {
+  background: #dafbe1;
+  color: #116329;
+}
+
+.state[data-tone='speaking'] {
+  background: #ddf4ff;
+  color: #0550ae;
+}
+
+.state[data-tone='paused'] {
+  background: #eaeef2;
+  color: #424a53;
+}
+
+.state[data-tone='inactive'] {
+  background: #fff1e5;
+  color: #953800;
+}
+
+.stateHeading {
+  display: block;
+  font-size: 26px;
+}
+
+.state span {
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 15px;
+}
+
+.buttons button.primary {
+  border-color: #1f883d;
+  background: #1f883d;
+  color: #ffffff;
+}
+
+.buttons button:disabled {
+  opacity: 0.45;
+}
+
+.queuesHeading {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 4px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.queuesHeading h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.queueList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.queueList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-top: 1px solid var(--row-border);
+}
