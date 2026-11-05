@@ -1,0 +1,72 @@
+x-php: &php
+  build: ./docker/php
+  image: queue-wallboard-php
+  user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+  init: true
+  working_dir: /app/backend
+  volumes:
+    - .:/app
+  environment: &php-environment
+    COMPOSER_HOME: /tmp/composer
+    AMI_USERNAME: demo
+    AMI_SECRET: demo-secret
+    WEB_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+
+services:
+  simulator:
+    <<: *php
+    restart: unless-stopped
+    command: php bin/console simulator:run
+    ports:
+      - "127.0.0.1:5039:5039"
+    healthcheck:
+      test: ["CMD", "php", "-r", "exit(@fsockopen('127.0.0.1', 5039) === false ? 1 : 0);"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+      start_period: 5s
+
+  daemon:
+    <<: *php
+    restart: unless-stopped
+    command: php bin/console daemon:run
+    environment:
+      <<: *php-environment
+      FLOOR_TIMEZONE: Europe/Prague
+    ports:
+      - "127.0.0.1:8090:8090"
+    healthcheck:
+      test: ["CMD", "php", "-r", "exit(@fsockopen('127.0.0.1', 8090) === false ? 1 : 0);"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+      start_period: 5s
+    depends_on:
+      simulator:
+        condition: service_healthy
+
+  web:
+    image: node:24.20.0-alpine3.24
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+    init: true
+    working_dir: /app/web
+    command: npm run dev
+    volumes:
+      - .:/app
+    environment:
+      HOME: /tmp
+      npm_config_cache: /tmp/npm
+      DAEMON_INTERNAL_URL: http://daemon:8090
+      NEXT_PUBLIC_DAEMON_WEBSOCKET_URL: ws://localhost:8090/websocket
+      NEXT_PUBLIC_SIMULATOR_CONTROL_URL: http://localhost:5039
+    ports:
+      - "127.0.0.1:3000:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3000/wallboard"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+    depends_on:
+      daemon:
+        condition: service_healthy
