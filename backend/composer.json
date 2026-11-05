@@ -1,0 +1,53 @@
+{
+    "name": "queue-wallboard/queue-wallboard",
+    "description": "Queue wallboard reference project: AMI simulator and ReactPHP daemon",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "QueueWallboard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "QueueWallboard\\Tests\\": "tests/",
+            "QueueWallboard\\Tools\\": "tools/"
+        }
+    },
+    "require": {
+        "php": "^8.5",
+        "ext-pcntl": "*",
+        "evenement/evenement": "^3.0",
+        "guzzlehttp/psr7": "^2.13",
+        "psr/clock": "^1.0",
+        "psr/log": "^3.0",
+        "ratchet/rfc6455": "^0.4.1",
+        "react/dns": "^1.14",
+        "react/event-loop": "^1.6",
+        "react/http": "^1.11.1",
+        "react/promise": "^3.3",
+        "react/socket": "^1.17",
+        "symfony/clock": "^8.1",
+        "symfony/console": "^8.1"
+    },
+    "config": {
+        "platform": {
+            "php": "8.5.0"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "3.95.27",
+        "phpstan/extension-installer": "1.4.3",
+        "phpstan/phpstan": "2.3.5",
+        "phpstan/phpstan-deprecation-rules": "2.0.5",
+        "phpstan/phpstan-phpunit": "2.1.1",
+        "phpstan/phpstan-strict-rules": "2.1.1",
+        "phpunit/phpunit": "13.4.6",
+        "react/async": "^4.3",
+        "rector/rector": "2.8.4"
+    }
+}
