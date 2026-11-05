@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use QueueWallboard\Daemon\DaemonCommand;
+use QueueWallboard\Simulator\SimulatorCommand;
+use Symfony\Component\Console\Application;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$application = new Application('queue-wallboard');
+$application->addCommand(new SimulatorCommand());
+$application->addCommand(new DaemonCommand());
+$application->run();
