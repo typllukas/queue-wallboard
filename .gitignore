@@ -1,0 +1,3 @@
+backend/vendor/
+backend/.php-cs-fixer.cache
+backend/.phpunit.cache/
