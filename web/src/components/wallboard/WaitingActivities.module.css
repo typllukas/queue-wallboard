@@ -1,0 +1,27 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.call {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2em 0;
+  border-bottom: 1px solid var(--row-border);
+  font-variant-numeric: tabular-nums;
+}
+
+.call span {
+  color: var(--text-muted);
+}
+
+.empty {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.more {
+  margin: 0.3em 0 0;
+  color: var(--text-muted);
+}

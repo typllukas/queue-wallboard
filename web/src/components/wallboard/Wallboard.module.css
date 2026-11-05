@@ -1,0 +1,46 @@
+.wallboard {
+  padding: 0.9em;
+  font-size: clamp(13px, min(1.1vw, 2.8vh), 32px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6em;
+  color: var(--text-muted);
+}
+
+.header p {
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.75em;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  transition: opacity 0.3s;
+}
+
+.content[data-dimmed='true'] {
+  opacity: 0.4;
+}
+
+.middleRow {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 0.6em;
+}
+
+@media (max-width: 900px) {
+  .middleRow {
+    grid-template-columns: 1fr;
+  }
+}

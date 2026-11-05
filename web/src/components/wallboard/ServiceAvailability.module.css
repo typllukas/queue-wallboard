@@ -1,0 +1,27 @@
+.queues {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+  gap: 0.6em;
+}
+
+.queue {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+}
+
+.queueName {
+  width: 5.5em;
+  font-weight: 600;
+}
+
+.serviceLevel b {
+  font-size: 2.2em;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  margin-left: 0.2em;
+  font-size: 0.8em;
+  color: var(--text-muted);
+}

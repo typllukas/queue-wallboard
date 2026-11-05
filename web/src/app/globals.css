@@ -1,0 +1,31 @@
+:root {
+  color-scheme: dark;
+  --background: #0f1419;
+  --panel: #161b22;
+  --text: #e6e9ee;
+  --text-muted: #9aa4b2;
+  --border: #2a323c;
+  --row-border: #1d242c;
+  --green: #3fb950;
+  --orange: #d29922;
+  --red: #f85149;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+
+[data-colour='green'] {
+  color: var(--green);
+}
+
+[data-colour='orange'] {
+  color: var(--orange);
+}
+
+[data-colour='red'] {
+  color: var(--red);
+}

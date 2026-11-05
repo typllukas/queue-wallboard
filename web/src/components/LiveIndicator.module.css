@@ -1,0 +1,7 @@
+.indicator[data-status='live'] {
+  color: var(--green);
+}
+
+.indicator[data-status='reconnecting'] {
+  color: var(--orange);
+}

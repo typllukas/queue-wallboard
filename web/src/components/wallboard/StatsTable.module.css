@@ -1,0 +1,32 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th,
+.table td {
+  padding: 0.3em;
+  border-bottom: 1px solid var(--row-border);
+  text-align: right;
+}
+
+.table thead th {
+  border-bottom-color: var(--border);
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.table th:first-child,
+.table td:first-child {
+  text-align: left;
+}
+
+.queueName {
+  font-weight: 600;
+}
+
+.plainRowHeader {
+  font-weight: 400;
+}

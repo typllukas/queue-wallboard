@@ -1,0 +1,24 @@
+.widget {
+  background: var(--panel);
+  border-radius: 6px;
+  padding: 0.7em;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.subtitle {
+  margin: 0.15em 0 0;
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.widget > :last-child:not(.title, .subtitle) {
+  margin-top: 0.5em;
+}
